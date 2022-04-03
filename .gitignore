@@ -1,2 +1,5 @@
-.obsidian
-.trash
+docs/.obsidian/
+
+docs/.trash/
+
+/docs/drawio-exporter/
