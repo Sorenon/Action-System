@@ -1,4 +1,6 @@
 site_name: Action System Design
+site_url: https://sorenon.github.io/Action-System/
+repo_url: https://github.com/Sorenon/Action-System/
 
 theme:
     name: 'material'
