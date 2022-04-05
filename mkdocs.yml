@@ -34,4 +34,3 @@ markdown_extensions:
 plugins:
   - search
   - roamlinks
-  - drawio-exporter
