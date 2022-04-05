@@ -3,7 +3,7 @@ SuInput is an input system designed to give pancake and XR applications access t
 
 This kind of system combined with other features that SuInput provides such as input glyphs and external configuration allows applications to have first class support for almost any human interface device, including those that didn't exist when it was written.
 
-SuInput is heavily inspired by Steam Input & OpenXR and borrows many of their concepts and naming conventions. SuInput has substantial differences from each of these systems to increase accessibility, ease of use and flexibility.
+SuInput is heavily inspired by Steam Input & OpenXR and borrows many of their concepts and naming conventions. SuInput has substantial differences from each of these systems to increase accessibility, ease of use, flexibility and stability.
 
 #### SIAPI Issues
 - Only supports modern console and generic controllers
@@ -12,6 +12,7 @@ SuInput is heavily inspired by Steam Input & OpenXR and borrows many of their co
 - Undocumented edge cases
 - Applications have to be published to Steam
 - Closed source and inextensible
+- Applications often botch their implimentation of SIAPI / mixed input
 
 #### OpenXR Issues
 - Limited non-XR device support

@@ -6,28 +6,28 @@ Some types of activator can block and interrupt each other.
 - **Hold:** Default functionality
 - **Press[^1]:** Activated for an instant on press
 - **Release[^1]:** Activated for an instant on release
-- **Single Tap:** Activated for an instant after quick press and release
+- **Quick Tap:** Activated for an instant after quick press and release
 - **Double Tap:** Activated by two taps or tap then hold
 - **Triple Tap:** Activated by three taps or two taps then hold
 - **Long hold:** Activates after being held for a short duration
 
-[^1]: Press / Release activators are equivalent for default Hold activators with the matching Impulse setting
+[^1]: Press / Release activators are equivalent to `Hold` activators with the matching `Impulse` setting
 
 #### Button Activator Settings
 ##### Hold
 ~~~
 #Is this activator blockable by other activators
-Block behaviour: Block, Interrupt, None (default)
+Override behaviour: Block, Interrupt, None (default)
 
 #Should we fire as an impulse
 Impulse: On Press, On Release, False (default)
 ~~~
-##### Single Tap
+##### Quick Tap
 ```
 #Is this activator blockable by double tap / tripple tap activators
-Block behaviour: Block (default), None
+Override behaviour: Block (default), None
 
-#Can this activator block / interrupt hold activators
+#Can this activator override hold activators
 Blocking: True, False (default)
 
 #How quickly must the button be released
@@ -36,9 +36,9 @@ Max Hold Duration: 150 ms (default)
 ##### Double Tap
 ```
 #Is this activator blockable by tripple tap activators
-Block behaviour: Block, Interrupt, None (default)
+Override behaviour: Block, Interrupt, None (default)
 
-#Can this activator block / interrupt hold activators
+#Can this activator override hold activators
 Blocking: True (default), False
 
 #How quickly must the button be double pressed
@@ -49,7 +49,7 @@ Impulse: On Press, On Release, False (default)
 ```
 ##### Triple Tap
 ```
-#Can this activator block / interrupt hold activators
+#Can this activator override hold activators
 Blocking: True (default), False
 
 #How quickly must the button be tripple pressed

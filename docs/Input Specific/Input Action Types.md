@@ -1,8 +1,7 @@
 ## Primitive Input Types
 ### Boolean
-Sticky?
-Repeat presses?
-Event only?
+Sticky? TODO
+Repeat presses? TODO
 On or Off
 Input Components: Mouse Button, Keyboard Key
 Action: Jump, Sprint, Use item
