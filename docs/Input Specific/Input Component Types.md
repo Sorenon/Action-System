@@ -8,6 +8,7 @@ Component Conversions
 - None
 
 Activators: [[Button Activators]]
+
 Action Conversions
 
 - S: Button -> Boolean
@@ -92,7 +93,7 @@ Action Conversions
 Component Conversions
 
 - M: Motion -> Button (Lean, Shake, Thrust)
-- M: Motion -> Value (Lean, Shake, Thrust)
+- M: Motion -> Trigger (Lean, Shake, Thrust)
 - M: Motion -> Move2D (As Mouse)
 - M: Motion -> Axis1D (As Wheel)
 
@@ -102,4 +103,3 @@ Action Conversions
 - S: Motion -> Acceleration (Gravity)
 
 ## TODO Touchscreen
-## TODO Radial Menu

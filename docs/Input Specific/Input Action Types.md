@@ -34,6 +34,8 @@ Combination: SUM of every value
 Input Components: Mouse, Treadmill, Trackball, 2D Scroll Wheel
 Action: Turn Camera, Walk
 Combination: SUM of every value
+Usage Requirements:
+If the application is using the Delta2D action to turn the camera its state **must** be interpreted as degrees.
 
 ## Complex Input Types
 ### Wheel

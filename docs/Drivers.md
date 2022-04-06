@@ -9,22 +9,24 @@ Devices: Mouse, Keyboard
 Standard Interaction profiles: Mouse and Keyboard
 
 ## SDL2
-Event Based
+Event / Polling Based
 Devices: All SDL supported controllers
 Standard Interaction Profiles: 
 
 - Dualshock 4
-- Dualsense
-- Xbox 360 (xinput / sdl2 generic gamepad)
+- DualSense
+- Xbox 360 (xInput / sdl2 generic gamepad)
 - Xbox One
 - Switch Pro
 - Joy-Con Pair
 - Left Joy-Con
 - Right Joy-Con
-- Gamecube
+- GameCube
 - Generic Joystick
 
 Features: Gyro, Accelerometer, Rumble, HD Rumble, LED, Player Number, Touch Points, Adaptive Triggers, Microphone, Speaker, Cursor, IR
+
+TODO Create oxidized input-only version of SDL2
 
 ## Wii
 Event Based

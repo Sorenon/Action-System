@@ -1,8 +1,8 @@
 An Interaction Profile is a collection of one or more devices which will be used together. For example `Xbox One Controller`,  `Mouse and Keyboard`, and  `Valve Index Controllers` are all standard interaction profiles.
 
-Multiple interaction profiles can be used at once to allow for mixed input. However more advanced users can take this further by creating custom interaction profiles. For example two mice, or a Dualsense with floor pedals and back buttons. 
+Multiple interaction profiles can be used at once to allow for mixed input. However more advanced users can take this further by creating custom interaction profiles. For example two mice, or a DualSense with floor pedals and back buttons. 
 
-Binding Layouts targeting a certain interaction profile can be automatically converted to other compatible interaction profiles. For example, if an application only has default bindings for an Xbox 360 controller SuInput will be able to convert those bindings to target almost any other generic controller. Once the bindings have been converted they can be edited as if they targeted the other interaction profile.
+[[Binding Layouts]] targeting a certain interaction profile can be automatically converted to other compatible interaction profiles. For example, if an application only has default bindings for an Xbox 360 controller SuInput will be able to convert those bindings to target almost any other generic controller. Once the bindings have been converted they can be edited as if they targeted the other interaction profile.
 
 Interaction profiles are also in command of what input glyphs the game uses. 
 

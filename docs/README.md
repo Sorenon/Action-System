@@ -12,7 +12,8 @@ SuInput is heavily inspired by Steam Input & OpenXR and borrows many of their co
 - Undocumented edge cases
 - Applications have to be published to Steam
 - Closed source and inextensible
-- Applications often botch their implimentation of SIAPI / mixed input
+- Applications often botch their implementation of SIAPI / mixed input
+- Applications cannot have their own rebinding menus
 
 #### OpenXR Issues
 - Limited non-XR device support
@@ -21,6 +22,7 @@ SuInput is heavily inspired by Steam Input & OpenXR and borrows many of their co
 - Entirely polling based
 - Undefined behaviour between runtimes
 - Input is a small part of a much larger specification
+- Applications cannot have their own rebinding menus
 
 #### Preventing these issues in SuInput
 SuInput intends to circumvent these flaws with strict key design philosophies: 
