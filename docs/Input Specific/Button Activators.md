@@ -1,6 +1,8 @@
 Button activators are a method of binding multiple actions to one button. 
 
 Some types of activator can block and interrupt each other.
+If an activator is marked as `blockable` it will not fire until SuInput knows the input could not trigger any higher priority activators (e.g. a double tap activator will only fire after the triple tap duration ends).
+If an activator is marked as `interruptible` it will be interrupted if a higher priority activator starts (e.g. a double tap activator would be interrupted by a third tap).
 
 #### Button Activator Types
 - **Hold:** Default functionality
