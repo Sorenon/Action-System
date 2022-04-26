@@ -1,12 +1,18 @@
 ## Windows Raw Input
 Event Based
 Devices: Mouse, Keyboard
-Standard Interaction profiles: Mouse and Keyboard
+Standard Interaction profiles: 
+
+- Mouse and Keyboard
+- Keyboard Only
 
 ## Linux XInput2
 Event Based
 Devices: Mouse, Keyboard
-Standard Interaction profiles: Mouse and Keyboard
+Standard Interaction profiles:
+
+- Mouse and Keyboard
+- Keyboard Only
 
 ## SDL2
 Event / Polling Based
@@ -15,7 +21,7 @@ Standard Interaction Profiles:
 
 - Dualshock 4
 - DualSense
-- Xbox 360 (xInput / sdl2 generic gamepad)
+- Xbox 360 (XInput / sdl2 generic gamepad)
 - Xbox One
 - Switch Pro
 - Joy-Con Pair

@@ -38,6 +38,7 @@ Component Conversions
 - M: Joystick -> Trigger (Length)
 - M: Joystick -> Button (Zone)
 - M: Joystick -> Cursor
+- M: Joystick -> Button (Radial Menu) 
 
 Action Conversions
 
@@ -74,6 +75,7 @@ Component Conversions
 - S: Touchpad -> Move1D (Pinch, Gesture)
 - S: Touchpad -> Joystick
 - M: Touchpad -> Cursor
+- M: Touchpad -> Button (Radial Menu) 
 
 Action Conversions
 

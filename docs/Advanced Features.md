@@ -2,5 +2,7 @@
 ## System Tree
 ## Embedded Runtimes
 ## External Runtime
-## Touch Screen Processor 
+## Advanced Points
+Touch screen processor
+Pressure / Area
 ## Cursor History
