@@ -1,4 +1,6 @@
 # SuInput
+(Better name pending)
+
 SuInput is an input system designed to give pancake and XR applications access to a huge range of input devices while minimizing the amount of complexity needed to support them. This is achieved by applications creating abstract 'actions' with explicit names and types, and relying on SuInput to map these actions to real devices.
 
 This kind of system combined with other features that SuInput provides such as input glyphs and external configuration allows applications to have first class support for almost any human interface device, including those that didn't exist when it was written.

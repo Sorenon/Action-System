@@ -1,17 +1,17 @@
-## Windows Raw Input
+## Win32 Raw Input
 Event Based
-Devices: Mouse, Keyboard
+Devices: Mouse, Keyboard, System Cursor
 Standard Interaction profiles: 
 
-- Mouse and Keyboard
+- Mouse, Keyboard and Cursor
 - Keyboard Only
 
 ## Linux XInput2
 Event Based
-Devices: Mouse, Keyboard
+Devices: Mouse, Keyboard, System Cursor
 Standard Interaction profiles:
 
-- Mouse and Keyboard
+- Mouse, Keyboard and Cursor
 - Keyboard Only
 
 ## SDL2
