@@ -6,8 +6,9 @@ Should output actions have explicit types like LED or Rumble Vibration, or shoul
 ### HD Vibration
 ### Rumble Vibration
 ### Wheel Force Feedback
-### Rich Status Data
-For fancy RGB setups (e.g. [Artemis](https://github.com/Artemis-RGB/Artemis))
 ### Player Number
 ### Adaptive Trigger
 ### Speaker? 
+### Rich Status Data
+For fancy RGB setups (e.g. [Artemis](https://github.com/Artemis-RGB/Artemis))
+Or configurable Discord presence? 
