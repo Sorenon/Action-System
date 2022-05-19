@@ -6,6 +6,26 @@ Multiple interaction profiles can be used at once to allow for mixed input. Howe
 
 Interaction profiles are also in command of what input glyphs the game uses. 
 
+## Profile Assignment
+### Automatic
+Due to complexities with how mice and keyboards work, they are all aggregated into one interaction profile instance.
+
+Game controllers are each assigned their own interaction profile.
+
+Game controller extensions (e.g. Wiimote Nunchucks) are combined with their parent controller into one interaction profile.
+
+All OpenXR devices are placed into the same interaction profile that the API provides.
+
+Applications can 'suggest' which interaction profile instance should be assigned to each player (users can override this using the external runtime), by default one profile each is given to every player.
+
+### Manual
+Using the external runtime users can create / modify interaction profiles, assign devices to different interaction profiles and assign interaction profiles to players.
+
+For simplicity mice and keyboards are still aggregated however the user can disable this.
+
+## Semantic Profiles
+TODO Explain what these are and flesh them out
+
 ### Gameplay Semantic Profile
 - Delta2D, Turn Camera / Move Cursor (Mouse Delta, XInput Right Thumbstick)
 - Axis2D, Move (WASD, XInput Left Thumbstick)
@@ -34,10 +54,7 @@ Interaction profiles are also in command of what input glyphs the game uses.
 - Button, Menu Right ('D', XInput Right Trigger)
 - Button, Menu Left ('A', XInput Left Trigger)
 
-TODO sharing devices between players
-TODO automatic device consumption
 TODO automatic layout generation
-
 <iframe border=0
 	frameborder=0
 	height=480
