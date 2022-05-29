@@ -6,18 +6,18 @@
 | Win32         | Hooking 🚧         | DLL Loading ❌                                                                                                                      |
 | Linux         | Hooking ❌         | SO Loading ❌                                                                                                                       |
 | MacOS         | Hooking ❌         | Dylib Loading? ❌                                                                                                                   |
-| UWP           | Hooking? ❌        | WASM / IPC? ❌                                                                                                                            |
-| Android       | Unknown ❌         | Check OpenXR's method ❌                                                                                                                            |
+| UWP           | Hooking? ❌        | WASM / IPC? ❌                                                                                                                      |
+| Android       | Hooking? ❌          | External Service? ❌                                                                                                                | 
 | IOS           | Unknown ❌         | Against ToS ([for now?](https://www.theverge.com/2022/3/25/22996248/apple-sideloading-apps-store-third-party-eu-dma-requirement))❌ |
 | Web           | Hooking ❌         | WASM? ❌                                                                                                                            |
-| PlayStation 4 | Unknown ❌         | Unknown ❌                                                                                                                            |
+| PlayStation 4 | Unknown ❌         | Unknown ❌                                                                                                                          |
 | PlayStation 5 | Unknown ❌         | Unknown ❌                                                                                                                          |
 | Switch        | Unknown ❌         | Unknown ❌                                                                                                                          |
 | Xbox GDK      | Unknown ❌         | Unknown ❌                                                                                                                          |
 
 Hooking drivers don't require any extra work by the developer and just work (unless they conflict with the game engine).
 
-Manual drivers require developers to pass certain events to the platform driver, because of this they cannot be used with closed-source engines such as Unity.
+Manual drivers require developers to pass certain events to the platform driver, because of this it is unlikely they can be used with closed-source engines such as Unity.
 
 In the case that a hooking driver is not available and the developer cannot access low level OS events, the developer can create a custom driver that takes events from the game engine and feeds them to the runtime. This is the approach that will be used for the Unity, Unreal and Godot plugins on platforms with missing drivers.
 
@@ -51,3 +51,17 @@ Cursor and Text: UI Events
 Controllers: [Gamepad API](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API) (suffers from weak API and implementations)
 Touch: [Touch Events](https://developer.mozilla.org/en-US/docs/Web/API/Touch_events)
 
+
+## Android
+Oh boy
+
+Android development is split into two favours: java + jni and pure native
+Thankfully most existing game engines use the more hackable java + jni approach.
+
+From what testing I've done it seems possible to add an empty ViewGroup to the front of the Activity's main window and by returning false on all the event callbacks the events should get passed down to whatever the game engine uses to read input (e.g. Activity events or Surface listeners)
+
+If this doesn't work for whatever reason we can do something similar to Monado and place a transparent window over all the Activities other windows. Then we can manually trigger the Activities events from our event callbacks. I think this only works for Java + JNI Activities though so something different will be needed for pure native ones. 
+
+Many of these game engines also expose a method for the game developers to add code the the Main Activity so in a worst case scenario we could just tell the devs which functions to override.
+
+It should be trivial to inject a text input widget to receive textbox input.

@@ -1,4 +1,8 @@
 ## Primitive Input Types
+### Event?
+A type of boolean action that only produces events
+On poll it returns the number of times it has been activated
+
 ### Boolean
 Sticky? TODO
 Repeat presses? TODO

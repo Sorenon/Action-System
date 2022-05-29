@@ -20,7 +20,7 @@ SuInput is heavily inspired by Steam Input & OpenXR and borrows many of their co
 #### OpenXR Issues
 - Limited non-XR device support
 - Limited remapping tools
-- Only offers primitive action types and bindings
+- Only offers primitive action types and bindings (In core)
 - Entirely polling based
 - Undefined behaviour between runtimes
 - Input is a small part of a much larger specification
