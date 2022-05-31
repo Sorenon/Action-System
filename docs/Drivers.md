@@ -32,8 +32,6 @@ Standard Interaction Profiles:
 
 Features: Gyro, Accelerometer, Rumble, HD Rumble, LED, Player Number, Touch Points, Adaptive Triggers, Microphone, Speaker, Cursor, IR
 
-TODO Create oxidized input-only version of SDL2
-
 ## Wii
 Event Based
 Devices: 

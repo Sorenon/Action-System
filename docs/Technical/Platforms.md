@@ -60,7 +60,7 @@ Thankfully most existing game engines use the more hackable java + jni approach.
 
 From what testing I've done it seems possible to add an empty ViewGroup to the front of the Activity's main window and by returning false on all the event callbacks the events should get passed down to whatever the game engine uses to read input (e.g. Activity events or Surface listeners)
 
-If this doesn't work for whatever reason we can do something similar to Monado and place a transparent window over all the Activities other windows. Then we can manually trigger the Activities events from our event callbacks. I think this only works for Java + JNI Activities though so something different will be needed for pure native ones. 
+If this doesn't work for whatever reason we can do something similar to Monado and place a transparent window over all the Activity's other windows. Then we can manually trigger the Activity's events from our event callbacks. I think this only works for Java + JNI Activities though so something different will be needed for pure native ones. 
 
 Many of these game engines also expose a method for the game developers to add code the the Main Activity so in a worst case scenario we could just tell the devs which functions to override.
 

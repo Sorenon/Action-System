@@ -12,9 +12,10 @@ Share platform driver between embedded and external runtime
 SDL2 Driver
 Wii Driver
 OpenXR Driver
-SDL2 Replacement Driver
+Minified SDL2 Driver
 External Runtime Loading
 KDL Interaction Profile Spec
-Destroy handles
+Destructible handles
+C API
 Stable Driver Interface
 Stable API
