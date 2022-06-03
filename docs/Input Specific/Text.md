@@ -29,3 +29,7 @@ Bounding box
 
 ## Touchscreen Specific
 Obscured area
+
+<https://developer.android.com/training/keyboard-input>
+<https://developer.apple.com/library/archive/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/KeyboardManagement/KeyboardManagement.html>
+<https://www.w3schools.com/tags/tag_input.asp>

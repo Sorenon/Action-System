@@ -7,6 +7,9 @@ This kind of system combined with other features that SuInput provides such as [
 
 SuInput is heavily inspired by Steam Input & OpenXR and borrows many of their concepts and naming conventions. SuInput has substantial differences from each of these systems to increase accessibility, ease of use, flexibility and stability.
 
+[Github Repo](https://github.com/Sorenon/suinput)
+[Github Project](https://github.com/users/Sorenon/projects/1)
+
 #### SIAPI Issues
 - Only supports modern console and generic controllers
 - Confusing GUI
