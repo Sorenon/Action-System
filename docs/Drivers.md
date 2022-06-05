@@ -1,11 +1,25 @@
-## Engine Drivers
+All input and output in SuInput is handled via one or more drivers. There are multiple types of drivers, most can be initialized by the external runtime while one must be initialized by the application.
+
+## Window Driver
+The one required driver is known as a **Window Driver** this driver is the sole responsibility of the application and cannot be updated by the external runtime (with some exceptions). Because of this developers must make sure to implement the driver correctly as the external runtime won't be able to correct them. The Window Driver is responsible for passing all data to SuInput which it cannot access through other Drivers and there **must** be one Window Driver per runtime. 
+
+TODO make a list of needed events for each target
+
+To make implementing a Window Driver easier SuInput provides Framework Window Drivers and Hooking Window Drivers. Framework drivers take raw events from either the OS or established Window Libraries (e.g. SDL2 or GLFW) and processes them for SuInput. Hooking Drivers use OS hooks to access low level events but are not available on many platforms and may need permissions to run. These Window Drivers can be updated by the external runtime. SuInput may ignore some events from the Window Driver if it has a better method of accessing a certain type of event. For example on Windows SuInput will ignore Keyboard and Mouse events from the Window Driver as it can better access this through Raw Input. 
+
+## Generic Driver
+Zero or more **Generic Drivers** can be added to a runtime. A Generic Driver provides one or more device types for SuInput. 
+
+If the user has an external runtime installed, application embedded Generic Drivers will be ignored by SuInput and replaced with the external runtime's equivalents.
+
+The Generic Driver must register itself for a device type before it can create any instances of that type. It either registers the type as TOTAL or SUPLIMENTAL, if more than one driver registers itself as TOTAL only input from one drive will be accepted.
+
+TODO Prevent multiple SUPLIMENTAL drivers colliding
+
+## Provided Window Drivers
 TODO
 
-## Hooking Drivers
-In order to make using SuInput as painless as possible it comes with a selection of 'hooking' drivers. In order to use these all the application has to do is tell SuInput to use them. They have the benefit of almost always working as intended and being easy to upgrade with an external runtime. 
-
-They come with a few downsides, the first is that their hooking nature may trigger some Anti-Virus or Anti-Cheat software (but most modern antivirus solutions are smart enough to ignore our hooks). The second is battling against the Game Engine / Platform API to actually be able to receive uninterrupted input without breaking anything.
-
+## Provided Generic Drivers
 ### Win32 Raw Input
 Event Based
 Devices: Mouse, Keyboard, System Cursor
