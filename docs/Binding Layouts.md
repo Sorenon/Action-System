@@ -7,3 +7,5 @@ While the session is running the application may be able to modify the user's ac
 
 ## Sharing
 Using the external mapping tool users will be able to export their Binding Layouts to KDL? files. Likewise users will be able to import Binding Layouts. 
+
+See [[Conversion#Binding Layout Conversion]]
