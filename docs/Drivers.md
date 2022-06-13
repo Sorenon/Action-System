@@ -12,7 +12,7 @@ Zero or more **Generic Drivers** can be added to a runtime. A Generic Driver pro
 
 If the user has an external runtime installed, application embedded Generic Drivers will be ignored by SuInput and replaced with the external runtime's equivalents.
 
-The Generic Driver must register itself for a device type before it can create any instances of that type. It either registers the type as TOTAL or SUPLIMENTAL, if more than one driver registers itself as TOTAL only input from one drive will be accepted.
+The Generic Driver must register itself for a device type before it can create any instances of that type. It either registers the type as TOTAL or SUPLIMENTAL, if more than one driver registers itself as TOTAL only devices from one TOTAL driver will be accepted.
 
 TODO Prevent multiple SUPLIMENTAL drivers colliding
 
@@ -78,6 +78,8 @@ Devices: -
 Standard Interaction profiles: OpenXR interaction profiles
 Features: XrPose, Gyro, Accelerometer, HD Rumble
 
+### Kinect
+(https://twitter.com/SamNChiet/status/1475654581367435265)
 ### Eyegaze?
 ### Simulation rigs?
 ### Analogue Keyboards (Wooting)?

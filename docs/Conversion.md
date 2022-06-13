@@ -4,7 +4,7 @@ If a developer only has access to an Xbox 360 controller when making their game,
 Because of this the external remapper provides a tool to automatically convert a binding layout from one Interaction Profile to another. This process is entirely data-driven and can go through multiple stages e.g. Xbox 360 -> Generic Controller -> Dualshock 3.
 
 ## Device Type Coercion
-That's all well and good for when the user can use the external runtime to modify the converted Binding Layout but what about when the user does not have it activate?
+That's all well and good for when the user can use the external runtime to modify the converted Binding Layout but what about when the user does not have it active?
 
 This is where Device Type coercion is used. In the above example the Dualshock 3 controller would just pretend to be an Xbox 360 controller (it's glyphs would remain DS3 however). For users this should be far easier to understand and use at the cost of loosing device specific features.
 
