@@ -4,7 +4,6 @@ A type of boolean action that only produces events
 On poll it returns the number of times it has been activated
 
 ### Boolean
-Sticky? TODO
 Repeat presses? TODO
 On or Off
 Input Examples: Mouse Button, Keyboard Key
@@ -84,3 +83,27 @@ Data: TODO
 
 ### Magnometer?
 ### Microphone?
+
+## Hybrid Action Types
+Takes more action state out of the application's hands. By doing this the runtime can enable more complex functionality with little extra effort from the developer.
+
+### Hotbar
+Input Examples: Stick shift
+Action Examples: Item hotbar, Gear selection
+Combination: Latest changed binding
+
+An action with N states, marked as boolean child actions. One of these child actions is marked as 'selected' at any given time. 
+
+It has two other child actions called `Shift Positive` and `Shift Negative` which shift the selected index accordingly.
+
+The application can mark one state as default and whether shifting should wrap around.
+
+## Sticky Boolean
+Input Examples: N / A
+Action Examples: Aim down sights, Sprint, Couch
+Combination: Boolean child OR Sticky state
+
+## Player Orientation 
+Delta2D
+Euler angles / Quaternion
+Reset View
