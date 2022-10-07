@@ -9,3 +9,6 @@ While the session is running the application may be able to modify the user's ac
 Using the external mapping tool users will be able to export their Binding Layouts to KDL? files. Likewise users will be able to import Binding Layouts. 
 
 See [[Conversion#Binding Layout Conversion]]
+
+## Quick Settings
+When creating a Binding Layout the developer can add user adjustable variables called Quick Settings. Quick settings make it easier for users to adjust sensitivity or enable / disable certain bindings, such as Gyro Controls.
