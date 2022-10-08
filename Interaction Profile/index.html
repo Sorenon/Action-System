@@ -1,0 +1,1052 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://sorenon.github.io/Action-System/Interaction%20Profile/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+    
+    
+      
+        <title>Interaction Profile - Action System Design</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#profile-assignment" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Action System Design" class="md-header__button md-logo" aria-label="Action System Design" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Action System Design
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Interaction Profile
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Sorenon/Action-System/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Action System Design" class="md-nav__button md-logo" aria-label="Action System Design" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Action System Design
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Sorenon/Action-System/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        SuInput
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../API%20Types%20Summary/" class="md-nav__link">
+        API Types Summary
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Action%20Sets%20and%20Layers/" class="md-nav__link">
+        Action Sets and Layers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Advanced%20Features/" class="md-nav__link">
+        Advanced Features
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Binding%20Layouts/" class="md-nav__link">
+        Binding Layouts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Binding/" class="md-nav__link">
+        Binding
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Conversion/" class="md-nav__link">
+        Conversion
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Drivers/" class="md-nav__link">
+        Drivers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Interaction Profile
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Interaction Profile
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#profile-assignment" class="md-nav__link">
+    Profile Assignment
+  </a>
+  
+    <nav class="md-nav" aria-label="Profile Assignment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automatic" class="md-nav__link">
+    Automatic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual" class="md-nav__link">
+    Manual
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semantic-profiles" class="md-nav__link">
+    Semantic Profiles
+  </a>
+  
+    <nav class="md-nav" aria-label="Semantic Profiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gameplay-semantic-profile" class="md-nav__link">
+    Gameplay Semantic Profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gui-semantic-profile" class="md-nav__link">
+    GUI Semantic Profile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mixed-input" class="md-nav__link">
+    Mixed Input
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharing" class="md-nav__link">
+    Sharing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copilot" class="md-nav__link">
+    Copilot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-interaction-profile" class="md-nav__link">
+    Custom Interaction Profile
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Output/" class="md-nav__link">
+        Output
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resources/" class="md-nav__link">
+        Resources
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Scripting/" class="md-nav__link">
+        Scripting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13">
+          Input Specific
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Input Specific" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Input Specific
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Input%20Specific/Button%20Activators/" class="md-nav__link">
+        Button Activators
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Input%20Specific/Child%20Actions/" class="md-nav__link">
+        Child Actions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Input%20Specific/Chords%20And%20Combos/" class="md-nav__link">
+        Chords And Combos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Input%20Specific/Input%20Action%20Types/" class="md-nav__link">
+        Input Action Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Input%20Specific/Input%20Component%20Types/" class="md-nav__link">
+        Input Component Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Input%20Specific/Input%20Glyphs/" class="md-nav__link">
+        Input Glyphs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Input%20Specific/Text/" class="md-nav__link">
+        Text
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_14">
+          Internal
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Internal" data-md-level="1">
+        <label class="md-nav__title" for="__nav_14">
+          <span class="md-nav__icon md-icon"></span>
+          Internal
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Internal/Device%20Lifecycle/" class="md-nav__link">
+        Device Lifecycle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Internal/Driver%20Interface/" class="md-nav__link">
+        Driver Interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Internal/Pipeline/" class="md-nav__link">
+        Pipeline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Internal/Platforms/" class="md-nav__link">
+        Platforms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Internal/Plugins/" class="md-nav__link">
+        Plugins
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Internal/Threading/" class="md-nav__link">
+        Threading
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Internal/Working%20User/" class="md-nav__link">
+        Working User
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#profile-assignment" class="md-nav__link">
+    Profile Assignment
+  </a>
+  
+    <nav class="md-nav" aria-label="Profile Assignment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automatic" class="md-nav__link">
+    Automatic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual" class="md-nav__link">
+    Manual
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semantic-profiles" class="md-nav__link">
+    Semantic Profiles
+  </a>
+  
+    <nav class="md-nav" aria-label="Semantic Profiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gameplay-semantic-profile" class="md-nav__link">
+    Gameplay Semantic Profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gui-semantic-profile" class="md-nav__link">
+    GUI Semantic Profile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mixed-input" class="md-nav__link">
+    Mixed Input
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharing" class="md-nav__link">
+    Sharing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copilot" class="md-nav__link">
+    Copilot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-interaction-profile" class="md-nav__link">
+    Custom Interaction Profile
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/Sorenon/Action-System/edit/master/docs/Interaction Profile.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+  <h1>Interaction Profile</h1>
+
+<p>An Interaction Profile is a collection of one or more devices which will be used together. For example <code>Xbox One Controller</code>,  <code>Mouse and Keyboard</code>, and  <code>Valve Index Controllers</code> are all standard interaction profiles.</p>
+<p>Multiple interaction profiles can be used at once to allow for mixed input. However more advanced users can take this further by creating custom interaction profiles. For example two mice, or a DualSense with floor pedals and back buttons. </p>
+<p><a href="../Binding%20Layouts/">Binding Layouts</a> targeting a certain interaction profile can be automatically converted to other compatible interaction profiles. For example, if an application only has default bindings for an Xbox 360 controller SuInput will be able to convert those bindings to target almost any other generic controller. Once the bindings have been converted they can be edited as if they targeted the other interaction profile. See <a href="../Conversion/#binding-layout-conversion">Conversion#Binding Layout Conversion</a>.</p>
+<p>Interaction profiles are also in command of what input glyphs the game uses. </p>
+<h2 id="profile-assignment">Profile Assignment<a class="headerlink" href="#profile-assignment" title="Permanent link">&para;</a></h2>
+<h3 id="automatic">Automatic<a class="headerlink" href="#automatic" title="Permanent link">&para;</a></h3>
+<p>Due to complexities with how mice and keyboards work, they are all aggregated into one interaction profile instance.</p>
+<p>Game controllers are each assigned their own interaction profile.</p>
+<p>Game controller extensions (e.g. Wiimote Nunchucks) are combined with their parent controller into one interaction profile.</p>
+<p>All OpenXR devices are placed into the same interaction profile that the API provides.</p>
+<p>Applications can 'suggest' which interaction profile instance should be assigned to each player (users can override this using the external runtime), by default one profile each is given to every player.</p>
+<h3 id="manual">Manual<a class="headerlink" href="#manual" title="Permanent link">&para;</a></h3>
+<p>Using the external runtime users can create / modify interaction profiles, assign devices to different interaction profiles and assign interaction profiles to players.</p>
+<p>For simplicity mice and keyboards are still aggregated however the user can disable this.</p>
+<h2 id="semantic-profiles">Semantic Profiles<a class="headerlink" href="#semantic-profiles" title="Permanent link">&para;</a></h2>
+<p>TODO Explain what these are and flesh them out</p>
+<h3 id="gameplay-semantic-profile">Gameplay Semantic Profile<a class="headerlink" href="#gameplay-semantic-profile" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Delta2D, Turn Camera / Move Cursor (Mouse Delta, XInput Right Thumbstick)</li>
+<li>Axis2D, Move (WASD, XInput Left Thumbstick)</li>
+<li>Button, Attack (Mouse Left, XInput Right Trigger)</li>
+<li>Button, Use (Mouse Right, XInput Left Trigger)</li>
+<li>Button, Reload ('R', XInput 'X')</li>
+<li>Button, Jump (Space, XInput 'A')</li>
+<li>Button, Crouch (Ctrl, XInput 'B')</li>
+<li>Button, Sprint (Shift, XInput Left Thumbstick Click)</li>
+<li>Button, Menu (Escape, XInput Start)</li>
+<li>Button, Item Right (Scroll Up, XInput Right Bumper)</li>
+<li>Button, Item Left (Scroll Down, XInput Left Bumper)</li>
+</ul>
+<h3 id="gui-semantic-profile">GUI Semantic Profile<a class="headerlink" href="#gui-semantic-profile" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Delta2D, Scroll (Scroll wheel)</li>
+<li>Delta1D, Zoom (Trackpad Pinch, Ctrl + Scroll wheel)</li>
+<li>Button, Up (Up Key, XInput DPad Up, XInput Left Thumbstick Up)</li>
+<li>Button, Left (Left Key, XInput DPad Left, XInput Left Thumbstick Left)</li>
+<li>Button, Down (Down Key, XInput DPad Down, XInput Left Thumbstick Down)</li>
+<li>Button, Right (Right Key, XInput DPad Right, XInput Left Thumbstick Right)</li>
+<li>Button, Select (Mouse Left, Enter, XInput 'A')</li>
+<li>Button, Back (Backspace, XInput 'B')</li>
+<li>Button, Exit (Escape, XInput Menu)</li>
+<li>Button, Tab Right ('E', XInput Right Bumper)</li>
+<li>Button, Tab Left ('Q', XInput Left Bumper)</li>
+<li>Button, Menu Right ('D', XInput Right Trigger)</li>
+<li>Button, Menu Left ('A', XInput Left Trigger)</li>
+</ul>
+<p>TODO automatic layout generation</p>
+<iframe border=0
+    frameborder=0
+    height=480
+    width=720   src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1#R%3Cmxfile%3E%3Cdiagram%20id%3D%22h5Q61B0YN9rPFSDJiW0-%22%20name%3D%22Mixed%20Input%22%3E3VnLUtswFP2aLNuJLDuPJSEBOpCSFqbAqiNsxRajWI4iE7tfXzmW44fABEpiN6v4Hl29rs6RrpQOPF1E5xwF3pQ5mHaMrhN14LhjGKALB%2FInQeIUsXpmCricOMopB27IH5zVVGhIHLwqOQrGqCBBGbSZ72NblDDEOVuX3eaMlnsNkIs14MZGVEfviCO8FB0Y%2FRy%2FwMT1sp5Bb5iWLFDmrGay8pDD1gUITjrwlDMm0q9FdIppErwsLmm9s1dKtwPj2Be7VAjOgHW3Xv4m3ybhxSya%2Bye3j18sNTYRZxPGjpy%2FMhkXHnOZj%2BgkR0echb6Dk1a70sp9rhgLJAgk%2BISFiNViolAwCXliQVUpjoi4T6p%2FtZT1UCgZR6rljRErQ5%2BtCsCKhdzGNVPMWIO4i0WNn%2BJlMv9CByqW55gtsOCxdOCYIkGey%2FxAimbu1i9fCfmhFuMdC6PafUY0VD1d4viRIe5oK1Zej7VHBL4J0CYmaynKcuxfjeMz5gJHtTNXpRmh47K5zuUBMswrSKPX3VOo%2Bo1w2JdDL5A4MR8y4iZGTuON9e88Npri8abqCecoLjgEjPhiVWh5lgA5SaBZZgmo7k4Vf2BZdf7yIx1BTpPtVD7OHKPFIhu0TGW9%2F%2BWkOLwyYaPK1KXUq0jPqnAiHaiqVaHFJ6gKaqqasnCFG5fUNg4NSAotLTHnl%2FPv45%2BPv54cYxT2oixQx35wmbo8XgyH0aoEzKw5G7qK0N0ZZ3NCm6d2%2FxXFF6nd3xO1l8F1fA%2BEPeAsmF07ox%2BePc3S12On9nBHalutovZQo%2FY4RHSF%2FRZs0mbbbhegkcTn45QEu953QbtICfQb74yiGHOJ6bvJwdPxCi2315vmeGlp8ToJAkpsuVbMb13AzJeOpINmW%2BbRHUl1WdTb8gefLf8PvRNU7%2F3wjXeC6r0YfvI7QV1M63PBEfEd4rvy6wrFLBSNS3BYjqxxyC3rxTA284RwcAVazSpQk4wJKpKBu70HvFfKplUrzXZIWT81C7lv%2BzQMh5V0eI8ilmb%2Bb1Qa7%2Fw%2FPTj5Cw%3D%3D%3C%2Fdiagram%3E%3Cdiagram%20id%3D%22c1TGQ3jnEVbHoawuWCXP%22%20name%3D%22Sharing%22%3E7Vltd5owFP41fuwOEAH3UetL2609PfN02n3ZSSVCtkBYjCL79QslEF6crbMVtu6TuTc3CXnu89wE6YBzfzthMPSuqYNIx9CcbQcMO4aha6AnfhJPnHpMq5s6XIYdGaQcU%2FwTZSOld40dtCoFckoJx2HZuaBBgBa85IOM0agctqSkvGoIXVRzTBeQ1L0z7HAv9fYMW%2FkvEHa9bGXdep%2F2%2BDALljtZedChUcEFRh1wzijlacvfniOSgJfhgu3NVe%2FChEvzzrihl%2FNw8%2FnHWTrZ%2BJAh%2BRYYCvgfT%2F1pxKKJN7gcD2fgy0N4wR6u3LNsazzO8EKOgE%2BalHGPujSAZKS8A0bXgYOSWTVhqZiPlIbCqQvnN8R5LLkA15wKl8d9InvRFvN5MvydKa37Qs9wK2d%2BNGJpPBMCCdWKrtkC7dl3xkTIXMT3xEmWJKAU6CQBniDqI85iEcAQgRxvypyDkrpuHqfSIxoyQwdkS867gWQtV7qm6xWq5bCcocjDHE1D%2BAhIJFRezsZhyG4Q42i7FwvZ25PcknUjU1GkRKhnPq8gQEs7Hjx7MA7u4OLr2Hdu5hM%2FWn63RmdWI1QPxKMXuJ6Y9xm%2FE0Ox%2FdF6JbqDv5LuoEb3Dyh%2BoJA57WS8YbaM8noNp7dDebtO%2BZ0YaU1RfufT2P8z9mTGzFYVKft3Z7IGA1GnNFWytFtGl5i09LjWu%2BXildvF6mW%2FUvXafdsxmhDDYfg%2BeaLq3Zdmqxx6S7F4QJU%2BYJbS1wWVtKTyk6NUZvqMwbgQFiYBqwPWMStvHZV4cSjuixeN9AkUTXJMjmBO%2FeZwS2CMmPDVz8RWyK9yWwb2Ce8Oe4lbwLAfhgQvBEtp0E4QdatCtl7TKIJGathpDvTW1D6gn6b21dZpY%2B3L9l7QbcewiMjTwMEb0XSTZl4O806xWKG%2FnfrOddpEldx5F%2F2H5V28r%2B97c3q6DICXLgNHpayuj6knIKnc1Qc4cHDgimqgzfrTYTv1UP2LzWpaDr03LAfzmXIA7frHwTxUDv3ko0zau2qnLKrHxGvqQpjqC1B6hqvvaGD0Cw%3D%3D%3C%2Fdiagram%3E%3Cdiagram%20id%3D%2295kvRpUVmhsFwS-qhy79%22%20name%3D%22Copilot%22%3E3VrRcps4FP0aT5%2BSMQiw8xh7vWlm0pnMJjNt900GGbQRiAphm379XgkpGNMkTrtey81DgKuLpHN0dHUlPELzfHsjcJl94glhI3%2BcbEfoj5Hve2M0hYuyNK0ljILWkAqaGKfO8EC%2FE%2FumsdY0IVXPUXLOJC37xpgXBYllz4aF4Ju%2B24qzfqslTsnA8BBjNrR%2BponMWuvUn3T2j4SmmW3Zi67akiWOn1LB68K0V%2FCCtCU5ttUYjFWGE77ZMaHFCM0F57K9y7dzwhStlrHxxd%2FXj99X8lF6j59uK%2F71YnZ10Vb253teeQYnSCF%2FuuqvN3fh8q98Ie7jq6RYkLiU%2BAJFBptsLJUkAWbNIxcy4ykvMFt01pmmi6hqx%2FDU%2BdxxXoLRA%2BM%2FRMrGyATXkoMpkzkzpQfiMbgrXouYvALCDKXEIiXyFT%2FPgFUId2Rj6LohPCdSNOAgCMOSrvvawkai6bNfRzbcGL7fwb3p9hqz2rT0Zcm3YJnzQgrOGBGDwelTv8moJA8l1uxsYGb%2FCs1rIiTZvsqLKfWnZkaYYBGYx0038zw7abKdWReNj8SkjUJnrWLPxs03Zew7JWPb7x0d3zPcKPGOvcG4OCFgFPQFjKKTK9gfkHhdlozGMIC8OA8Wg%2FDULIZowOIpAsMK4rcp9KZHCBTRgYEidCxQRC8teLeFJALHrdTH94KvKCPnIXrv5KEDTZwQ%2FX8schQeuhq6ldTZfp9fVhd4jmV1dk%2FaE3bEoNlZQteqRUbTQhdE32q1C5sxspLdE9yl6moGAPaeFWewS%2FXHfLXS%2BcmHOS8p4%2FKD2u%2FBpljBzWicwZURqTxTnOs3pCBYquuGt1WZsaxa5FCl2jfCxlVViz2vuRwpstruLoXtirUAIRpD3%2Fo%2BWMet%2FTGjClZCcqBNCixbGjT8DW7UQ1VrprC6bSpJcs1MDVt3cOHiCS5K14qRh%2Fq2KGt5%2BVN9%2FgW4FgvRI6pwmoHax6U9KpqXIJDOa5MRoa5LLjP90prG2h9rsxYFUXDJFpYv1nQ1gWwu%2Fz9oQk%2FHF7DVFS1SZaZK9SpqACBaJGCtniVLcNwhVA611DGK6nma4XVbB6BTowxgdWv6n4bdtlyaxP9QOHtxECKV7Ac7q1Y9dmimohnkxOzamKVanH4YMPshdT8jg%2FyCzTkD5KpdFAWTaDoBO5DGn8hOCfICFAamhh37Sv8dIxrbA7hh9H227UZfND1a%2BL36DdIIu4i9mUYEoVNphO33%2BaURYehYGhEMDyHOUMf%2BoTpGbul4eK7h%2BuFQ5Lt2OBQMjzWcPxzaZ%2FH0h0NB8IPtxPkHhkP3yXYmuhIYXtwnz9rUFO7ucMN1GupopNhf6hxY64bflE6h8SMfgAaTQzU%2FdUvzw5O6M0nqIte%2B%2BIXD%2FPh3FPr0TIP78OTu5eA%2BHDgnJe%2BA5t1IYI6sefvR6u2Df88pzdt%2BH6J5F%2FW%2B%2F2HLP%2BK2Bx67n03psp2fpaHFvw%3D%3D%3C%2Fdiagram%3E%3Cdiagram%20id%3D%22_5Ky0LnrIYnmiXWjiXko%22%20name%3D%22Custom%20Interaction%20Profile%22%3E5VrbctowEP0aHpuxLV%2FgMSEkaZtMaOlMk74pWGC1wnKFHOx%2BfWUs4YtSAhOIxfQFvOuVbO%2Bes1qt3QPDRXbNYBLd0RCRnmOFWQ9c9hzHtkBf%2FBWavNR4vlsq5gyH0qhSTPAfpEZKbYpDtGwYckoJx0lTOaVxjKa8oYOM0VXTbEZJ86oJnCNNMZlComu%2F45BHpbbvBJX%2BBuF5pK5s%2B4PyzAIqY%2FkkywiGdFVTgVEPDBmlvDxaZENECucpv2Rf%2BI%2FBp1E6%2BfVteHNDf9Or%2B%2BBDOdnVPkM2j8BQzA87tSMfjefKXygU7pMiZTyicxpDMqq0F4ymcYiKWS0hVTa3lCZCaQvlT8R5LrEAU06FKuILIs%2BiDPOHYviZJ6XH2pnLTM68FnIp7OgC6aolTdkUbbEDEomQzdG2%2BSQWCqfU4CQdfI3oAnGWCwOGCOT4uYk5KKE739jJoeeMwbxmkFAc82Vt5nGhEAaShX2JwFxRqxXplrljedvsxUF5A0qqPUmlWqNnDyRJjz5DkkovfEb5E4Us1CDWBNAqwhxNEriO10okoSZY9gv8M2IcZVtDtXFSy0eluKpyhK1Molp%2B8K1%2Fx7bm4P3953bCxFjceo2Khfio6FcIFRnX0pHY6J0UGwFwzaejp9Hx4YlmQnMfI%2FE7pCKelBDEDGVnAM7aXuuYoP6pLJWGkDrolNQ6C%2B1WwndbQClvVI6qsLJvdmizPbCPT%2FZAI%2FsYhZAszeS27QZmMbv%2FHy%2B9gx1ZavuHpumbQjbQEH9XXHyYLjldiIOPMUcMTjmmsZDGjM6wCJuZdGhXou4LfAjekw92J7vCAwPb3nWLZ7tGIdvWN1JjAvOiULNsLS5mINhtLnkAdJ3RVUxrTjxPEoKnsMwIp%2BBFt3sv6lm2i8QwE3sVedLuHyFR%2BLsmCmBWovC16GyWv82CZ13gOMTxXBzdwpym%2FDSw73SOfaCn4Vs0K%2Br8O5ou9VLifStGZ6%2BS8cgE2rT1XyOQ6rkbQiA1cb2IfDG2RlDE9QxrWAJ9jf26vqwZFAmMosiuxahpFNGzoMEU8U3r6Tvd9AzN6Cw4uzYAgWMW5vVu2rq3cJlCUuU2s3sKnnE9BaeTJtuhIb1rt0yVr6ZAWt%2FImd5T8IzrKagbOKWeQtuL3fcUgF50d5EYjlzvqSXt9Xrv4G%2B%2F3hYdR4tOa9k7jX5CG%2FfH7CcIsfoGrHyjV31JB0Z%2FAQ%3D%3D%3C%2Fdiagram%3E%3C%2Fmxfile%3E"></iframe>
+
+<h2 id="mixed-input">Mixed Input<a class="headerlink" href="#mixed-input" title="Permanent link">&para;</a></h2>
+<p><img alt="Mixed Input Demo Diagram" src="../device-diagram.drawio#0" /></p>
+<h2 id="sharing">Sharing<a class="headerlink" href="#sharing" title="Permanent link">&para;</a></h2>
+<p><img alt="Sharing Demo Diagram" src="../device-diagram.drawio#1" /></p>
+<h2 id="copilot">Copilot<a class="headerlink" href="#copilot" title="Permanent link">&para;</a></h2>
+<p><img alt="Copilot Demo Diagram" src="../device-diagram.drawio#2" /></p>
+<h2 id="custom-interaction-profile">Custom Interaction Profile<a class="headerlink" href="#custom-interaction-profile" title="Permanent link">&para;</a></h2>
+<p><img alt="Custom Interaction Profile Demo Diagram" src="../device-diagram.drawio#3" /></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../Drivers/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Drivers" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Drivers
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Output/" class="md-footer__link md-footer__link--next" aria-label="Next: Output" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Output
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.078830c0.min.js"></script>
+      
+    
+  </body>
+</html>
