@@ -13,4 +13,4 @@ https://developer.apple.com/videos/play/wwdc2021/10081/
 How do we balance using both the External Editing GUI and an in-game one?
 ## Split Screen and Device Sharing
 How should sharing devices between multiple players work?
-And how should sharing player focuses between applications work?
+And how should sharing player focus between applications work?

@@ -7,7 +7,7 @@
 | Linux         | Hooking ❌         | SO Loading ❌                                                                                                                       |
 | MacOS         | Hooking ❌         | Dylib Loading? ❌                                                                                                                   |
 | UWP           | Hooking? ❌        | WASM / IPC? ❌                                                                                                                      |
-| Android       | Hooking? ❌          | External Service? ❌                                                                                                                | 
+| Android       | Hooking? ❌        | External Service? ❌                                                                                                                |
 | IOS           | Unknown ❌         | Against ToS ([for now?](https://www.theverge.com/2022/3/25/22996248/apple-sideloading-apps-store-third-party-eu-dma-requirement))❌ |
 | Web           | Hooking ❌         | WASM? ❌                                                                                                                            |
 | PlayStation 4 | Unknown ❌         | Unknown ❌                                                                                                                          |

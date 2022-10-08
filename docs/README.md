@@ -9,6 +9,7 @@ SuInput is heavily inspired by Steam Input & OpenXR and borrows many of their co
 
 [Github Repo](https://github.com/Sorenon/suinput)
 [Github Project](https://github.com/users/Sorenon/projects/1)
+[[API Types Summary]]
 
 #### SIAPI Issues
 - Only supports modern console and generic controllers

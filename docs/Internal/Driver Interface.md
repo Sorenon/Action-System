@@ -27,3 +27,6 @@ Pose is a highly processed form of component as deterministic position requires 
 Due to the high levels of complexity and specialization SuInput leaves all this work to the driver.
 
 TODO Figure out how different spaces should be communicated
+
+## Ownership and Sync
+
